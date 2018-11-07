@@ -1,11 +1,12 @@
-# MirelesCloud Gatsby Starter
+# Vapeplace CBD Website
 ### Gatsby v2
 
-## Running in development
-'npm install'
+## Development
+`git clone git@github.com:MirelesCloud/vapeplace.git`
+`npm install`
 `gatsby develop`
 
-## Running build
+## Build
 `gatsby build`
 
 ## Plugins

@@ -1,51 +1,36 @@
-import React from "react"
+import React from 'react';
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from 'react-responsive-carousel';
 
-import Smoke from '../images/smoke.jpg'
-import Smoke2 from '../images/smoke2.jpg'
-import Smoke3 from '../images/smoke3.jpg'
+import Smoke from '../images/smoke0.png'
+import Smoke2 from '../images/CBDBanner.png'
+import Smoke3 from '../images/smoke31.png'
 //import CBDBanner from '../images/CBDBanner.png'
 
 const Header = () => (
-  <div>
-    <header>
-      <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
-        <ol className="carousel-indicators">
-          <li data-target="#carouselExampleIndicators" data-slide-to="0" className="active"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-        </ol>
-        <div className="carousel-inner" role="listbox">
-          <div className="carousel-item active" style={ { backgroundImage: `url(${Smoke3})`} }>
-            <div className="carousel-caption d-none d-md-block">
-              <h3>First Slide</h3>
-              <p>This is a description for the first slide.</p>
+  <Carousel infiniteLoop={true} autoPlay={true} interval={5000} transitionTime={2000} dynamicHeight={true}>
+    <div >
+       <img src={Smoke} alt="header"/>
+           <div className="header-one">
+             <h1 className="display-3 background">all natural liquids</h1>
+           </div>
+       <p className="legend">Alchemy</p>
+    </div>
+       <div>
+          <img src={Smoke2} alt="header 2"/>
+            <div className="header-two">
+              <h1 className="display-3 background">CBD Supplements</h1>
             </div>
-          </div>
-          <div className="carousel-item" style={ { backgroundImage: `url(${Smoke})`} }>
-            <div className="carousel-caption d-none d-md-block">
-              <h3>Second Slide</h3>
-              <p>This is a description for the second slide.</p>
-            </div>
-          </div>
-          <div className="carousel-item" style={ { backgroundImage: `url(${Smoke2})`} } >
-            <div className="carousel-caption d-none d-md-block">
-              <h3>Third Slide</h3>
-              <p>This is a description for the third slide.</p>
-            </div>
-          </div>
-        </div>
-        <a className="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-          <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span className="sr-only">Previous</span>
-        </a>
-        <a className="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-          <span className="carousel-control-next-icon" aria-hidden="true"></span>
-          <span className="sr-only">Next</span>
-        </a>
+          <p className="legend" alt="image">CBD</p>
       </div>
-    </header>
-
-  </div>
+      <div>
+          <img src={Smoke3} alt="header 3"/>
+            <div className="header-three">
+              <h1 className="display-3 background">electronic cigarettes</h1>
+            </div>
+          <p className="legend" alt="image">vape</p>
+      </div>
+  </Carousel>
 )
 
 export default Header

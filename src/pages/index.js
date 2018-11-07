@@ -3,6 +3,7 @@ import { TypographyStyle, GoogleFont } from 'react-typography'
 import typography from '../utils/typography'
 
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css'
+import '../../node_modules/react-responsive-carousel/lib/styles/carousel.min.css'
 import '../css/main.css'
 import '../css/contact.css'
 import { graphql } from 'gatsby'
