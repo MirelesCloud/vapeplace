@@ -14,7 +14,12 @@
 `gatsby-plugin-google-fonts`
 `gatsby-transformer-sharp`
 `gatsby-plugin-sharp`
-
+`gatsby-image`
+`gatsby-plugin-goolge-analytics`
+``
+`react-responsive-carousel`
+`react-bootstrap`
+`react-google-maps`
 `react-anchor-link-smooth-scroll`
 
 ## CSS
