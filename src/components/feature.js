@@ -6,12 +6,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import { faFacebook, faPinterestSquare, faInstagram, } from '@fortawesome/free-brands-svg-icons'
 
+//import LAMap from './la-location.js'
+
 const Feature = () => (
   <section>
   <StaticQuery
     query={graphql`
-      query ServiceQuery {
-        vapeImage: file(relativePath: {eq: "images/vape.jpg"}) {
+      query FeatureQuery {
+        vapeImage: file(relativePath: {eq: "images/store.jpg"}) {
           childImageSharp {
             fluid(maxWidth: 400) {
               ...GatsbyImageSharpFluid
@@ -25,17 +27,24 @@ const Feature = () => (
           <div className="row">
             <div className="col-lg-6">
               <h2>Visit Us</h2>
-              <address style={{lineHeight:"0.3"}}>
-                <p ><strong>West Los Angeles</strong></p>
-                <p>11725 Pico Blvd, Los Angeles, CA 90064</p>
-                <p>(424) 293-0212</p>
-              </address>
-              <hr/>
-              <address style={{lineHeight:"0.3"}}>
-                <p><strong>Redondo Beach</strong></p>
-                <p>11725 Pico Blvd, Los Angeles, CA 90064</p>
-                <p>(424) 293-0212</p>
-              </address>
+
+                <address style={{lineHeight:"0.3"}}>
+                  <p ><strong>West Los Angeles</strong></p>
+                  <p></p>
+                  <p>Los Angeles, CA 90064</p>
+                  <p>(424) 293-0212</p>
+                </address>
+
+                <hr/>
+                <address style={{lineHeight:"0.3"}}>
+                  <p><strong>Redondo Beach</strong></p>
+                  <p>2705 Artesia Blvd.</p>
+                  <p>Redondo Beach, CA 90278</p>
+                  <p>(310) 371-1328</p>
+                </address>
+
+
+
               <div className="mx-auto" style={{width: 200}}>
                 <FontAwesomeIcon icon={faEnvelope} className="fa-2x m-2" />
                 <FontAwesomeIcon icon={faFacebook} className="fa-2x m-2"/>

@@ -14,7 +14,8 @@ class Example1 extends React.Component {
 
 const Style = ({children}) => (
   <h1 style={{color:"green"}}>{children}</h1>
-)
+
+
 const Example2 = (props) => (
   //const stringProps = JSON.stringify(this.props.myProp);
     <Style>

@@ -1,84 +1,131 @@
 import React from 'react'
+import { StaticQuery, graphql } from 'gatsby'
+import Img from 'gatsby-image'
 
-import Vape1 from '../images/vape1.jpg'
-import Vape2 from '../images/vape2.jpg'
-import Vape3 from '../images/vape3.jpg'
-import Vape4 from '../images/vape4.jpg'
-import Vape5 from '../images/vape5.jpg'
-import Vape6 from '../images/vape6.jpg'
-
-const Products = () => (
+const Products = (props) => (
   <section>
-    <h2>Portfolio Heading</h2>
-
-    <div className="row">
-      <div className="col-lg-4 col-sm-6 portfolio-item">
-        <div className="card h-100">
-          <a href="/"><img className="card-img-top" src={Vape1} alt=""/></a>
-          <div className="card-body">
-            <h4 className="card-title">
-              <a href="/">Project One</a>
-            </h4>
-            <p className="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur eum quasi sapiente nesciunt? Voluptatibus sit, repellat sequi itaque deserunt, dolores in, nesciunt, illum tempora ex quae? Nihil, dolorem!</p>
+    <StaticQuery
+      query={graphql`
+        query ProductQuery {
+          productOne: file(relativePath: {eq: "images/juice.jpg"}) {
+            childImageSharp {
+              fluid(maxWidth: 700) {
+                ...GatsbyImageSharpFluid_tracedSVG
+              }
+            }
+          }
+          productTwo: file(relativePath: {eq: "images/btwellness.png"}) {
+            childImageSharp {
+              fluid(maxWidth: 700) {
+                ...GatsbyImageSharpFluid_tracedSVG
+              }
+            }
+          }
+          productThree: file(relativePath: {eq: "images/cbddrip.jpg"}) {
+            childImageSharp {
+              fluid(maxWidth: 700) {
+                ...GatsbyImageSharpFluid_tracedSVG
+              }
+            }
+          }
+          productFour: file(relativePath: {eq: "images/mod.png"}) {
+            childImageSharp {
+              fluid(maxWidth: 700) {
+                ...GatsbyImageSharpFluid_tracedSVG
+              }
+            }
+          }
+          productFive: file(relativePath: {eq: "images/suorin2.png"}) {
+            childImageSharp {
+              fluid(maxWidth: 700) {
+                ...GatsbyImageSharpFluid_tracedSVG
+              }
+            }
+          }
+          productSix: file(relativePath: {eq: "images/vapepens.png"}) {
+            childImageSharp {
+              fluid(maxWidth: 700) {
+                ...GatsbyImageSharpFluid_tracedSVG
+              }
+            }
+          }
+        }
+        `}
+        render={data => (
+          <>
+          <h1 className="my-5">Purveyor of All Natural E-Liquids and CBD</h1>
+          <hr/>
+          <div className="row">
+            <div className="col-lg-4 col-sm-6 portfolio-item">
+              <div className="card h-100">
+                <a href="/"><Img className="card-img-top" fluid={data.productOne.childImageSharp.fluid} alt={data.productOne.childImageSharp.fluid.originalName}/></a>
+                <div className="card-body">
+                  <h4 className="card-title">
+                    <a href="/">Natural E-Liquids</a>
+                  </h4>
+                  <p className="card-text">Delicious natural flavored e-liquids.  Try our all time favorite <i>Waffle Cone</i> flavor</p>
+                </div>
+              </div>
+            </div>
+            <div className="col-lg-4 col-sm-6 portfolio-item">
+              <div className="card h-100">
+                <a href="/"><Img className="card-img-top" fluid={data.productTwo.childImageSharp.fluid} alt={data.productTwo.childImageSharp.fluid.originalName}/></a>
+                <div className="card-body">
+                  <h4 className="card-title">
+                    <a href="/">BeTru Wellness</a>
+                  </h4>
+                  <p className="card-text">BeTru Wellness have truly set the gold standard for hemp-derived products with our powerful plant-based formulas designed to support the BODY, MIND, and SOUL.</p>
+                </div>
+              </div>
+            </div>
+            <div className="col-lg-4 col-sm-6 portfolio-item">
+              <div className="card h-100">
+                <a href="/"><Img className="card-img-top" fluid={data.productThree.childImageSharp.fluid} alt={data.productThree.childImageSharp.fluid.originalName}/></a>
+                <div className="card-body">
+                  <h4 className="card-title">
+                    <a href="/">CBD Drip</a>
+                  </h4>
+                  <p className="card-text">CBD Drip is the leader in distributing premium quality full spectrum hemp CBD oil that works. </p>
+                </div>
+              </div>
+            </div>
+            <div className="col-lg-4 col-sm-6 portfolio-item">
+              <div className="card h-100">
+                <a href="/"><Img className="card-img-top" fluid={data.productFour.childImageSharp.fluid} alt={data.productFour.childImageSharp.fluid.originalName}/></a>
+                <div className="card-body">
+                  <h4 className="card-title">
+                    <a href="/">Premium Vape Mods</a>
+                  </h4>
+                  <p className="card-text">For the serious vaping connoisseur.</p>
+                </div>
+              </div>
+            </div>
+            <div className="col-lg-4 col-sm-6 portfolio-item">
+              <div className="card h-100">
+                <a href="/"><Img className="card-img-top" fluid={data.productFive.childImageSharp.fluid} alt={data.productFive.childImageSharp.fluid.originalName}/></a>
+                <div className="card-body">
+                  <h4 className="card-title">
+                    <a href="/">Compact E-Cigarettes</a>
+                  </h4>
+                  <p className="card-text">Descreet and practical</p>
+                </div>
+              </div>
+            </div>
+            <div className="col-lg-4 col-sm-6 portfolio-item">
+              <div className="card h-100">
+                <a href="/"><Img className="card-img-top" fluid={data.productSix.childImageSharp.fluid} alt={data.productSix.childImageSharp.fluid.originalName}/></a>
+                <div className="card-body">
+                  <h4 className="card-title">
+                    <a href="/">Mod Atomizers and Parts</a>
+                  </h4>
+                  <p className="card-text">Have our experts help you customize your vape rig.</p>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-      <div className="col-lg-4 col-sm-6 portfolio-item">
-        <div className="card h-100">
-          <a href="/"><img className="card-img-top" src={Vape2} alt=""/></a>
-          <div className="card-body">
-            <h4 className="card-title">
-              <a href="/">Project Two</a>
-            </h4>
-            <p className="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-          </div>
-        </div>
-      </div>
-      <div className="col-lg-4 col-sm-6 portfolio-item">
-        <div className="card h-100">
-          <a href="/"><img className="card-img-top" src={Vape3} alt=""/></a>
-          <div className="card-body">
-            <h4 className="card-title">
-              <a href="/">Project Three</a>
-            </h4>
-            <p className="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos quisquam, error quod sed cumque, odio distinctio velit nostrum temporibus necessitatibus et facere atque iure perspiciatis mollitia recusandae vero vel quam!</p>
-          </div>
-        </div>
-      </div>
-      <div className="col-lg-4 col-sm-6 portfolio-item">
-        <div className="card h-100">
-          <a href="/"><img className="card-img-top" src={Vape4} alt=""/></a>
-          <div className="card-body">
-            <h4 className="card-title">
-              <a href="/">Project Four</a>
-            </h4>
-            <p className="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-          </div>
-        </div>
-      </div>
-      <div className="col-lg-4 col-sm-6 portfolio-item">
-        <div className="card h-100">
-          <a href="/"><img className="card-img-top" src={Vape5} alt=""/></a>
-          <div className="card-body">
-            <h4 className="card-title">
-              <a href="/">Project Five</a>
-            </h4>
-            <p className="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-          </div>
-        </div>
-      </div>
-      <div className="col-lg-4 col-sm-6 portfolio-item">
-        <div className="card h-100">
-          <a href="/"><img className="card-img-top" src={Vape6} alt=""/></a>
-          <div className="card-body">
-            <h4 className="card-title">
-              <a href="/">Project Six</a>
-            </h4>
-            <p className="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque earum nostrum suscipit ducimus nihil provident, perferendis rem illo, voluptate atque, sit eius in voluptates, nemo repellat fugiat excepturi! Nemo, esse.</p>
-          </div>
-        </div>
-      </div>
-    </div>
+          </>
+        )}
+      />
   </section>
 )
 

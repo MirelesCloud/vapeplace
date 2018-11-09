@@ -10,7 +10,7 @@ const Header = (props) => (
     <StaticQuery
       query={graphql`
         query ImageQuery {
-          smoke1: file(relativePath: {eq: "images/smoke0.png"}) {
+          smoke1: file(relativePath: {eq: "images/liquids.png"}) {
             childImageSharp {
               fluid(maxWidth: 1080) {
                 ...GatsbyImageSharpFluid
@@ -39,7 +39,7 @@ const Header = (props) => (
           <div >
              <Img fluid={data.smoke1.childImageSharp.fluid} alt="header"/>
                  <div className="header-one">
-                   <h1 className="display-3 background">all natural liquids</h1>
+                   <h1 className="display-3 background">all natural e-liquids</h1>
                  </div>
              <p className="legend">Alchemy</p>
           </div>

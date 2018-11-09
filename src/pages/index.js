@@ -37,13 +37,11 @@ const TemplateWrapper = ({data}) => (
     <Navbar/>
     <Header/>
     <div className="container">
-      <Marketing/>
       <Products/>
+      <Marketing/>
       <Feature/>
-
     </div>
       <Footer/>
-
     <Layout>
         {{/*<Gallery images={data.imageGallery.edges}/>*/}}
     </Layout>
