@@ -6,9 +6,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import { faFacebook, faPinterestSquare, faInstagram, } from '@fortawesome/free-brands-svg-icons'
 
-//import LAMap from './la-location.js'
+import Layout from './layout'
 
-const Feature = () => (
+const FeatureTemplate = () => (
   <section>
   <StaticQuery
     query={graphql`
@@ -24,7 +24,7 @@ const Feature = () => (
     `}
       render={data =>
         <>
-          <div className="row">
+          <div className="row" id="contact">
             <div className="col-lg-6">
               <h2>Visit Us</h2>
 
@@ -42,9 +42,6 @@ const Feature = () => (
                   <p>Redondo Beach, CA 90278</p>
                   <p>(310) 371-1328</p>
                 </address>
-
-
-
               <div className="mx-auto" style={{width: 200}}>
                 <FontAwesomeIcon icon={faEnvelope} className="fa-2x m-2" />
                 <FontAwesomeIcon icon={faFacebook} className="fa-2x m-2"/>
@@ -61,6 +58,12 @@ const Feature = () => (
       }
     />
   </section>
+)
+
+const Feature = () => (
+  <Layout>
+    <FeatureTemplate/>
+  </Layout>
 )
 
 export default Feature

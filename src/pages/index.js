@@ -1,50 +1,19 @@
 import React from "react"
-import { TypographyStyle, GoogleFont } from 'react-typography'
-import typography from '../utils/typography'
-
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import '../../node_modules/react-responsive-carousel/lib/styles/carousel.min.css'
 import '../css/main.css'
 import '../css/contact.css'
 import { graphql } from 'gatsby'
 
-
-
-//import Section from "../components/test"
-import Layout from "../components/layout"
-//import Services from '../components/services'
-
-
-
-import Header from '../components/header'
-import Navbar from '../components/navbar'
-//import StoreMap from '../components/contact'
-//import Gallery from '../components/gallery'
+import Home from './template/home'
 import Footer from '../components/footer'
-//import Top from '../components/top-button'
-//import Playground from '../components/playground'
-import Marketing from '../components/marketing'
-import Products from '../components/products'
-import Feature from '../components/feature'
+
 
 
 const TemplateWrapper = ({data}) => (
   <div>
-    <TypographyStyle typography={typography} />
-    <GoogleFont typography={typography} />
-
-    {/*<Test imageHair={data.imageHair.childImageSharp}/>*/}
-    <Navbar/>
-    <Header/>
-    <div className="container">
-      <Products/>
-      <Marketing/>
-      <Feature/>
-    </div>
-      <Footer/>
-    <Layout>
-        {{/*<Gallery images={data.imageGallery.edges}/>*/}}
-    </Layout>
+    <Home/>
+    <Footer/>
   </div>
 )
 

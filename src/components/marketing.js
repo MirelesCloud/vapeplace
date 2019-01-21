@@ -1,6 +1,7 @@
 import React from 'react'
+import Layout from './layout'
 
-const Marketing = () => (
+const MarketingTemplate = () => (
   <section >
     <h2 className="my-4">Learn More About CBD</h2>
     <hr/>
@@ -12,7 +13,7 @@ const Marketing = () => (
             <p className="card-text text-justify">Cannabidiol (CBD) is a phytocannabinoid compound that has shown promising health benefits as a dietary supplement to help with inflammation, pain, anxiety, and other ailments. Yet, not all CBD products are the same. CBD is just one important component of a truly full-spectrum cannabinoid product. To maximize the effectiveness of a CBD product, it should retain all of the beneficial parts of the plant so it can work synergistically to give you the result you need. We believe a natural full-spectrum hemp product, void of harsh chemicals is optimal. Choose the natural and holistic approach.</p>
           </div>
           <div className="card-footer bg-success">
-          
+
           </div>
         </div>
       </div>
@@ -40,6 +41,12 @@ const Marketing = () => (
       </div>
     </div>
   </section>
+)
+
+const Marketing = () => (
+  <Layout>
+    <MarketingTemplate/>
+  </Layout>
 )
 
 export default Marketing

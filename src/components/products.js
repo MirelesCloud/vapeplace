@@ -2,7 +2,9 @@ import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
-const Products = (props) => (
+import Layout from './layout'
+
+const ProductsTemplate = (props) => (
   <section>
     <StaticQuery
       query={graphql`
@@ -127,6 +129,12 @@ const Products = (props) => (
         )}
       />
   </section>
+)
+
+const Products = () => (
+  <Layout>
+    <ProductsTemplate/>
+  </Layout>
 )
 
 export default Products
