@@ -1,8 +1,13 @@
+const fs = require("fs")
+const dotenv = require('dotenv')
+let env = process.env.NODE_ENV || 'development';
+require('dotenv').config({path: `./.env.${env}`});
+
 module.exports = {
   siteMetadata: {
-    title: `MirelesCloud Gatsby Starter`,
-    siteUrl: `https://mirelescloud.com`,
-    description: `Blazing fast modern site generator for React`,
+    title: `Vapeplace CBD`,
+    siteUrl: `https://vapeplacecbd.com`,
+    description: `Vaping and CBD`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -35,6 +40,17 @@ module.exports = {
    path: `${__dirname}/src/images/gallery`,
 
   }
+ },
+ {
+   resolve: `gatsby-source-graphql`,
+   options: {
+     typeName: `YELP`,
+     fieldName: `yelp`,
+     url: `https://api.yelp.com/v3/graphql`,
+     headers: {
+       Authorization: `bearer ${process.env.API_KEY}`
+     },
+   }
  },
     `gatsby-plugin-typography`,
     {

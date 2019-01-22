@@ -2,6 +2,10 @@ body {
   padding-top: 54px;
 }
 
+.navbar-brand {
+  font-size: 2rem;
+}
+
 @media (min-width: 992px) {
   body {
     padding-top: 56px;

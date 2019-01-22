@@ -4,6 +4,7 @@ import Header from '../../components/header'
 import Products from '../../components/products'
 import Marketing from '../../components/marketing'
 import Feature from '../../components/feature'
+import Review from '../../components/review'
 
 
 const Home = () => (
@@ -12,6 +13,7 @@ const Home = () => (
     <Products/>
     <Marketing/>
     <Feature/>
+    <Review/>
   </div>
 )
 
