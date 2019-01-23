@@ -6,8 +6,10 @@ require('dotenv').config({path: `./.env.${env}`});
 module.exports = {
   siteMetadata: {
     title: `Vapeplace CBD`,
-    siteUrl: `https://vapeplacecbd.com`,
-    description: `Vaping and CBD`,
+    titleTemplate: `%s · Vapeplace CBD`,
+    url: `https://www.vapeplacecbd.com`,
+    description: `Vaping juices, e-cigarettes and CBD`,
+    image: `/images/liquids.jpg`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
